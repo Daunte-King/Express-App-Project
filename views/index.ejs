@@ -1,5 +1,12 @@
-extends layout
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <nav>
+      <a href="/artists/new" <%- title === 'Add Artist' ? 'class="active"' : '' %>>ADD Artist</a>
+      <a href="/artists" <%- title === 'All Artists' ? 'class="active"' : '' %>>ALL Artists</a>
+  </nav>
 
-block content
-  h1= title
-  p Welcome to #{title}

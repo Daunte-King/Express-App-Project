@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+      <nav>
+        <img src="/images/camera.svg">
+        <a href="/artists" <%- title === 'All Artists' ? 'class="active"' : '' %>>ALL Artists</a>
+    <% if (user) { %>
+      <a href="/artists/new" <%- title === 'Add Artist' ? 'class="active"' : '' %>>ADD Artist</a>
+      <a href="/logout">LOG OUT</a>
+    <% } else { %>
+        <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+    <% } %>
+  </nav>
+    <h1>GOAT's</h1>
+    <table>
+      <thead>
+        <tr>
+          <th> Artist </th>
+          <th>Decade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Write the line of EJS to iterate over movies using forEach -->
+        <% songs.forEach(function(s) { %>
+          <tr>
+            <td><%= s.artist %></td>
+            <td><%= s.decade %></td>
+            <td><a href="/songs/<%= s._id %>">DETAILS</a></td>
+          </tr>
+        <!-- Close the forEach using EJS here -->
+      <% }) %>
+      </tbody>
+    </table>
+  </body>
+</html>

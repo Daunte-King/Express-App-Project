@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="/artists/new"></a>ADD artist</a>
+        <a href="/artists">All artists</a>
+    </nav>
+<h2>Artist Details</h2>
+<section id="show-page">
+    <div>Decade</div>
+    <div><%= artist.decade %> </div>
+    <div>Artist</div>
+    <div><%= artist.artist %> </div>
+    <form action="/artists/<%= song._id %>?_method=DELETE" method="post">
+        <button type="submit">X</button>
+    </form>
+</section>
+</body>
